@@ -1,4 +1,4 @@
-# 5x7-lcd
+# 5x7-led
 
 Components to replicate look and feel of 5x7 led digit display
 
