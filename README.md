@@ -1,5 +1,7 @@
 # 5x7-lcd
 
+Components to replicate look and feel of 5x7 led digit display
+
 ## Project setup
 ```
 yarn install
