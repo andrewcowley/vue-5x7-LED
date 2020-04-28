@@ -41,7 +41,7 @@ export default {
   width: 5px;
   height: 5px;
   margin: 1px;
-  background: #efefef;
+  background: #dddcdc;
 }
 
 .on {

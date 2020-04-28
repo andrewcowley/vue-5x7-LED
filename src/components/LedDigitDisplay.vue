@@ -1,6 +1,6 @@
 <template>
 <div class="digit-display">
-  <LedDigit v-for="(digit, index) in computedDigits" :key="index" :letter="computedDigits[index]"/>
+  <LedDigit v-for="(digit, index) in computedChars" :key="index" :letter="computedChars[index]"/>
 </div>
 
 </template>
@@ -22,11 +22,16 @@ export default {
     }
   },
   computed: {
-    arrayOfDigits () {
-      return this.toDisplay.split('')
+    arrayOfChars () {
+      const arrayOfChars = this.toDisplay.split('');
+      return arrayOfChars;
     },
-    computedDigits () {
-      return this.arrayOfDigits.map((item)=>{
+    truncatedChars () {
+      return this.arrayOfChars.slice(0, this.digits);
+    },
+    computedChars () {
+      // console.log(this.arrayOfChars, this.truncatedChars)
+      return this.truncatedChars.map((item)=>{
         const charCode = digits[item.charCodeAt()];
         if(charCode) {
           return digits[item.charCodeAt()]
