@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <LedDigitDisplay :to-display="'Pizza time dudes!'" :digits="12"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LedDigitDisplay from './components/LedDigitDisplay.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    LedDigitDisplay
   }
 }
 </script>
