@@ -1,6 +1,6 @@
 <template>
 <div class="digit-display">
-  <LedDigit v-for="(digit, index) in computedChars" :key="index" :letter="computedChars[index]"/>
+  <LedDigit v-for="(digit, index) in digits" :key="index" :letter="computedChars[index]"/>
 </div>
 
 </template>
