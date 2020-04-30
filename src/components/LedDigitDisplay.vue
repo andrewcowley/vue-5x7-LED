@@ -1,6 +1,6 @@
 <template>
 <div class="digit-display">
-  <LedDigit v-for="(digit, index) in digits" :key="index" :letter="computedChars[index]"/>
+  <LedDigit v-for="(char, index) in displayLength" :key="index" :letter="computedChars[index]"/>
 </div>
 
 </template>
@@ -14,7 +14,7 @@ export default {
     LedDigit
   },
   props: {
-    digits: {
+    displayLength: {
       type: Number
     },
     message: {
@@ -27,7 +27,7 @@ export default {
       return arrayOfChars;
     },
     truncatedChars () {
-      return this.arrayOfChars.slice(0, this.digits);
+      return this.arrayOfChars.slice(0, this.displayLength);
     },
     computedChars () {
       // console.log(this.arrayOfChars, this.truncatedChars)

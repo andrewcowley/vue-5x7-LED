@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <LedDigitDisplay :message="'There are way too many characters here'" :digits="12"/>
+    <LedDigitDisplay :message="'There are way too many characters here'" :display-length="12"/>
   </div>
 </template>
 
