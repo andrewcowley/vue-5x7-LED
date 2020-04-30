@@ -17,13 +17,13 @@ export default {
     digits: {
       type: Number
     },
-    toDisplay: {
+    message: {
       type: String
     }
   },
   computed: {
     arrayOfChars () {
-      const arrayOfChars = this.toDisplay.split('');
+      const arrayOfChars = this.message.split('');
       return arrayOfChars;
     },
     truncatedChars () {
