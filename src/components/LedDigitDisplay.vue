@@ -1,6 +1,6 @@
 <template>
 <div class="digit-display">
-  <LedDigit v-for="(char, index) in displayLength" :key="index" :letter="computedChars[index]"/>
+  <LedDigit v-for="(char, index) in displayLength" :key="index" :letter="toDisplay[index]"/>
 </div>
 
 </template>
@@ -8,6 +8,7 @@
 <script>
 import LedDigit from './LedDigit'
 import digits from '../digits.js'
+import Vue from 'vue';
 export default {
   name: 'LedDigitDisplay',
   components: {
@@ -19,6 +20,9 @@ export default {
     },
     message: {
       type: String
+    },
+    count: {
+      type: Number
     }
   },
   computed: {
@@ -29,8 +33,22 @@ export default {
     truncatedChars () {
       return this.arrayOfChars.slice(0, this.displayLength);
     },
+    toDisplay () {
+      const arr = this.computedChars.map((item,index)=> {
+        const slice = item[0]
+        console.log(slice)
+        item = digits.blank;
+        item.splice(-1,1,slice);
+        console.log(item)
+        return item
+      });
+      // return arr;
+      return this.computedChars;
+    },
+    blanks () {
+      return Array.from({ length: this.displayLength }, (v, i) => digits.blank)
+    },
     computedChars () {
-      // console.log(this.arrayOfChars, this.truncatedChars)
       return this.truncatedChars.map((item)=>{
         const charCode = digits[item.charCodeAt()];
         if(charCode) {

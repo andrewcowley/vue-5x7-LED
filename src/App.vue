@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <LedDigitDisplay :message="'There are way too many characters here'" :display-length="12"/>
+    <LedDigitDisplay
+      :count="count"
+      :message="'There are way too many characters here'"
+      :display-length="12"
+    />
+    <button @click="count++">count: {{ count }}</button>
   </div>
 </template>
 
 <script>
-import LedDigitDisplay from './components/LedDigitDisplay.vue'
+import LedDigitDisplay from "./components/LedDigitDisplay.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    LedDigitDisplay
-  }
-}
+    LedDigitDisplay,
+  },
+  data() {
+    return {
+      count: 0,
+    };
+  },
+};
 </script>
 
 <style>
