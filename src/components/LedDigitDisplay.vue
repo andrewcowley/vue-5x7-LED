@@ -35,15 +35,14 @@ export default {
     },
     toDisplay () {
       const arr = this.computedChars.map((item,index)=> {
-        const slice = item[0]
+        const slice = item[0];
         console.log(slice)
         item = digits.blank;
-        item.splice(-1,1,slice);
-        console.log(item)
+        item.splice(-1,1, slice);
         return item
       });
-      // return arr;
-      return this.computedChars;
+      return arr;
+      // return this.computedChars;
     },
     blanks () {
       return Array.from({ length: this.displayLength }, (v, i) => digits.blank)
